@@ -1,18 +1,29 @@
-
 function bubbleSort(arr) {
+  const n = arr.length;
+  let swapped;
 
-    // Iterate through the array
+  do {
+    swapped = false;
 
-      // If the current value is greater than its neighbor to the right
-        // Swap those values
+    for (let i = 0; i < n - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // Swap values if they are in the wrong order
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
 
-        // Do not move this console.log
+        // Set swapped to true to indicate a swap occurred
+        swapped = true;
         console.log(arr.join(","));
+      }
+    }
 
-    // If you get to the end of the array and no swaps have occurred, return
-
-    // Otherwise, repeat from the beginning
-
+    // Log the array after each pass
+    
+  } while (swapped);
+  console.log(arr.join(","));
+  // If no swaps occurred, the array is already sorted, and we can return
+  return arr
 }
 
 module.exports = bubbleSort;
